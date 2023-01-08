@@ -35,12 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let name = document.querySelector('.name');
     let occupation = document.querySelector('.occupation');
     let text = document.querySelector('.text');
-
+    update();
     function update() {
-        avatar.setAttribute('src', `images/${posts[cur_ind].img_path}`);
-        name.innerHTML = posts[cur_ind].name;
-        occupation.innerHTML = posts[cur_ind].occupation;
-        text.innerHTML = posts[cur_ind].text;
+        let cur_item = posts[cur_ind];
+        avatar.setAttribute('src', `images/${cur_item.img_path}`);
+        name.innerHTML = cur_item.name;
+        occupation.innerHTML = cur_item.occupation;
+        text.innerHTML = cur_item.text;
     }
 
     let nxt_btn = document.querySelector('.arrows .nxt-btn');
