@@ -7,20 +7,22 @@ body, html {
     margin: 0;
 }
 
-nav {
+aside.sidebar {
     background-color: white;
     height: 100%;
-    position: relative;
+    position: fixed;
     transition: var(--transition);
-    left: -25em;
+    left: 0;
+    top: 0;
+    transform: translateX(-100%);
     width: 25em;
 }
 
-nav.active {
-    left: 0;
+.sidebar.active {
+    transform: translateX(0);
 }
 
-nav .upper {
+.upper {
     display: flex;
     justify-content: space-between;
     padding: 0 1.5em;
@@ -137,7 +139,7 @@ button.close:hover {
 
 @media screen and (max-width: 800px) {
 
-    nav.active {
+    .sidebar.active {
         width: 100%;
         z-index: 1;
     }
