@@ -44,7 +44,7 @@ body, html {
     height: 160px;
 }
 
-.links {
+.icons {
     display: none;
 }
 
@@ -73,12 +73,12 @@ body, html {
     padding-left: 1.5em;
 }
 
-.links li {
+.icons li {
     color: var(--clr-primary-5);
     transition: var(--transition);
 }
 
-.links li:hover {
+.icons li:hover {
     color: var(--clr-primary-7);
 }
 
@@ -134,12 +134,10 @@ body, html {
         padding-left: 1em;
     }
 
-    .links {
+    .icons {
         list-style-type: none;
         display: flex;
         gap: 1em;
         justify-content: center;
     }
-
-
 }
