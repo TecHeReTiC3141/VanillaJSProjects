@@ -27,6 +27,11 @@ nav .upper {
     align-items: center;
 }
 
+.title {
+    letter-spacing: 2px;
+    text-shadow: 0 2px 5px gray;
+}
+
 .title:first-letter {
     color: var(--clr-primary-5);
 }
