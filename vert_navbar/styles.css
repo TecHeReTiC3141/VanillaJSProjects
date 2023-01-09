@@ -1,0 +1,145 @@
+body, html {
+    height: 100%;
+    font-family: var(--ff-secondary);
+    color: var(--clr-grey-1);
+    background-color: var(--clr-grey-10);
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    background-color: white;
+    height: 100%;
+    position: relative;
+    transition: var(--transition);
+    left: -25em;
+    width: 25em;
+}
+
+nav.active {
+    left: 0;
+}
+
+nav .upper {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1.5em;
+    align-items: center;
+}
+
+.title {
+    letter-spacing: 2px;
+    text-shadow: 0 2px 5px gray;
+}
+
+.title:first-letter {
+    color: var(--clr-primary-5);
+}
+
+button.close {
+    background: none;
+    border: none;
+    color: red;
+    transition: var(--transition);
+}
+
+button.close i {
+    text-shadow: -1px 0 black, 1px 0 black, 0 1px black, 0 -1px black;
+}
+
+button.close:hover {
+    transform: rotate(360deg);
+}
+
+.sects {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.sects li {
+    transition: var(--transition);
+    padding: 1em 1.5em;
+}
+
+.sects li:hover {
+    background-color: var(--clr-primary-6);
+}
+
+.sects li a {
+    font-family: var(--ff-secondary);
+    font-size: 1.5em;
+    text-decoration: none;
+    color: var(--clr-primary-3);
+    transition: var(--transition);
+}
+
+.sects li:hover a {
+    padding-left: 0.5em;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    position: absolute;
+    bottom: 1em;
+    width: 100%;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.icons li {
+    padding-left: .5em;
+    font-size: 1.5em;
+    color: var(--clr-primary-4);
+    transition: var(--transition);
+}
+
+.icons li:hover {
+    color: var(--clr-primary-2);
+}
+
+.icons li:first-child {
+    padding-left: 0;
+}
+
+@keyframes beat {
+    from {
+        font-size: 1em;
+        right: 3rem;
+        top: 3rem;
+    }
+    to {
+        font-size: 2em;
+        right: 2.5rem;
+        top: 2.5rem;
+    }
+}
+
+.nav-toggle {
+    background-color: transparent;
+    color: var(--clr-primary-5);
+    border: none;
+    transition: var(--transition);
+    cursor: pointer;
+    position: fixed;
+
+    animation-name: beat;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.nav-toggle:hover {
+    color: var(--clr-primary-7);
+}
+
+@media screen and (max-width: 800px) {
+
+    nav.active {
+        width: 100%;
+        z-index: 1;
+    }
+}
+
