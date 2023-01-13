@@ -4,7 +4,7 @@ body, html {
     color: var(--clr-grey-1);
     padding: 0;
     margin: 0;
-    background: url("images/interier.jpeg") no-repeat center fixed;
+    background: url("../images/interier.jpeg") no-repeat center fixed;
     background-size: cover;
 }
 
