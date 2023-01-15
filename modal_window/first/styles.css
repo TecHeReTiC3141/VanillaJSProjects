@@ -15,6 +15,80 @@ body, html {
     height: 100%;
 }
 
+.dropdown {
+    position: absolute;
+    top: 2em;
+    left: 2em;
+    padding: .5em;
+    background-color: white;
+    border-radius: .5em;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.dropdown * {
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown .sections {
+    list-style-type: none;
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.dropdown .sect-title::after {
+    display: block;
+    content: "-";
+    color: transparent;
+    background-color: black;
+    width: 0;
+    height: 2px;
+    transition: var(--transition);
+}
+
+
+
+.dropdown:hover .sect-title::after {
+    width: 100%;
+}
+
+.dropdown .sections li {
+    height: 0;
+    overflow: hidden;
+    transition: var(--transition);
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown .sections li a {
+    border-radius: .25em;
+    border: 2px solid var(--clr-primary-2);
+    padding: .25em;
+    display: block;
+    background-color: var(--clr-primary-6);
+    color: white;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.dropdown .sections li a.active {
+    background-color: lawngreen;
+    color: var(--clr-grey-1);
+}
+
+.dropdown .sections li:hover a {
+    opacity: .8;
+}
+
+.dropdown:hover .sections li {
+    height: 2em;
+    margin-top: .5em;
+}
+
 .background {
     position: fixed;
     width: 100%;
@@ -35,7 +109,7 @@ body, html {
     margin: 2em;
     border-radius: .5em;
     box-shadow: 2px 2px 10px lightgray;
-    z-index: 1;
+    z-index: 10;
     position: relative;
 }
 
