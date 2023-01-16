@@ -69,11 +69,11 @@ body, html {
     display: none;
 }
 
-.questions li:hover .question {
+.questions li.active .question {
     margin-bottom: 1em;
 }
 
-.questions li:hover .answer {
+.questions li.active .answer {
     display: block;
     padding-top: 1em;
     border-top: 2px solid var(--clr-grey-6);
