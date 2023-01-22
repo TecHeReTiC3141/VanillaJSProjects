@@ -94,7 +94,8 @@ body, html {
     background: var(--clr-grey-1);
     padding: .3em;
     border-radius: 5px;
-    display: none;
+    opacity: 0;
+    transition: var(--transition);
 }
 
 .icons li .tooltip::before {
@@ -109,7 +110,7 @@ body, html {
 }
 
 .icons li:hover .tooltip {
-    display: block;
+    opacity: 1;
 }
 
 
