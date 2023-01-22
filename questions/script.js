@@ -14,22 +14,19 @@ document.addEventListener('DOMContentLoaded', () => {
         cur_button.classList.remove('fa-minus-square');
     }
 
-    for (let i = 0; i < toggle_buttons.length; ++i) {
-        let cur_button =  toggle_buttons[i];
-        cur_button.dataset.quest_number = `${i}`;
-        questions[i].dataset.quest_number = `${i}`;
-        cur_button.addEventListener('click', () => {
-            let cur_quest = questions[Number(cur_button.dataset.quest_number)];
-            if (!cur_quest.classList.contains('active')) {
+    toggle_buttons.forEach(btn => {
+        btn.addEventListener('click', e => {
+            let par_question = e.currentTarget.parentElement.parentElement;
+            console.log(par_question);
+
+            if (par_question.classList.contains('active')) {
+                close(par_question, btn);
+            } else {
                 for (let i = 0; i < toggle_buttons.length; ++i) {
                     close(questions[i], toggle_buttons[i]);
                 }
-                open(cur_quest, cur_button);
-            } else {
-                close(cur_quest, cur_button);
+                open(par_question, btn);
             }
-
-
         });
-    }
+    })
 });
