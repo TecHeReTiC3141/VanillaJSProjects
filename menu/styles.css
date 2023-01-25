@@ -1,0 +1,146 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body, html {
+    height: 100%;
+    font-family: var(--ff-secondary);
+    color: var(--clr-grey-1);
+    background-color: var(--clr-grey-10);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: var(--transition);
+}
+
+img {
+    display: block;
+    overflow: clip;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    font-size: 2.8em;
+    margin-top: 4rem;
+    position: relative;
+}
+
+.title::after {
+    content: " ";
+    width: 5rem;
+    border: .15rem solid var(--clr-gold);
+    border-radius: 5px;
+    position: absolute;
+    top: 105%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.filters {
+    display: flex;
+    list-style-type: none;
+    margin: 2em;
+}
+
+.filters li {
+    padding: .5em .75em;
+    margin: 1em 0 1em 1.5em;
+    border-top: 2px solid var(--clr-gold);
+    border-left: 2px solid var(--clr-gold);
+    border-right: 2px solid #513e09;
+    border-bottom: 2px solid #513e09;
+    border-radius: .5em;
+    color: var(--clr-gold);
+    transition: var(--transition);
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.filters li:hover {
+    background-color: darkgoldenrod;
+    color: white;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    width: min(100%, 80em);
+    gap: .5em;
+    justify-content: center;
+}
+
+.post {
+    width: 45%;
+    display: flex;
+    margin-bottom: 2em;
+}
+
+.post .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px var(--clr-primary-2) dotted;
+    margin-bottom: 1em;
+}
+
+.header .name {
+    letter-spacing: 2px;
+    font-size: 1.1em;
+    text-transform: capitalize;
+}
+
+.header .price {
+    font-weight: bolder;
+    letter-spacing: 2px;
+    font-size: 1.4em;
+    color: var(--clr-gold);
+}
+.info {
+    /*width: 80%;*/
+}
+.descr {
+    color: var(--clr-grey-6);
+    font-size: 1.2em;
+}
+
+.photo {
+    object-fit: cover;
+    height: 10em;
+    width: 13em;
+    margin-right: 1em;
+    border-radius: .5em;
+    border: var(--clr-gold) 4px solid;
+}
+
+@media screen and (max-width: 1200px) {
+     .post {
+        width: 100%;
+    }
+
+    .content {
+        width: 40em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .post {
+        flex-direction: column;
+        width: 60%;
+    }
+
+    .photo {
+        width: 100%;
+        margin-bottom: .5em;
+        height: 15em;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        font-size: .8em;
+    }
+}
