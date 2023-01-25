@@ -77,9 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let filters = document.querySelector('.filters');
 
     function setupFilters() {
-        let unique_cats = menu_items.map(item => item.category).filter((value, index, self) => {
-            return self.indexOf(value) === index;
-        });
+        let unique_cats = menu_items.map(item => item.category).filter((value, index, self) =>
+            self.indexOf(value) === index);
         filters.append(...unique_cats.map(item => {
            let li = document.createElement('li');
            li.innerHTML = item;
@@ -122,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
     menu_items.map(create_post);
 
     let filter_buttons = document.querySelectorAll('.filters li');
-    console.log(filter_buttons);
+
     for (let btn of filter_buttons) {
         btn.addEventListener('click', (e) => {
             let cat = e.currentTarget.innerText.toLowerCase();
