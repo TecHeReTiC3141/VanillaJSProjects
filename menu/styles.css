@@ -18,13 +18,14 @@ body, html {
 
 img {
     display: block;
+    overflow: clip;
 }
 
 .title {
     width: 100%;
     text-align: center;
-    font-size: 2.4em;
-    margin-top: 3.5rem;
+    font-size: 2.8em;
+    margin-top: 4rem;
     position: relative;
 }
 
@@ -46,15 +47,17 @@ img {
 }
 
 .filters li {
-    padding: .5em;
-    margin: 1em 0 1em 1em;
+    padding: .5em .75em;
+    margin: 1em 0 1em 1.5em;
     border-top: 2px solid var(--clr-gold);
     border-left: 2px solid var(--clr-gold);
-    border-right: 2px solid darkgoldenrod;
-    border-bottom: 2px solid darkgoldenrod;
+    border-right: 2px solid #513e09;
+    border-bottom: 2px solid #513e09;
     border-radius: .5em;
     color: var(--clr-gold);
     transition: var(--transition);
+    cursor: pointer;
+    text-transform: capitalize;
 }
 
 .filters li:hover {
@@ -64,10 +67,10 @@ img {
 
 .content {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
     width: min(100%, 80em);
     gap: .5em;
+    justify-content: center;
 }
 
 .post {
@@ -87,6 +90,7 @@ img {
 .header .name {
     letter-spacing: 2px;
     font-size: 1.1em;
+    text-transform: capitalize;
 }
 
 .header .price {
@@ -95,9 +99,12 @@ img {
     font-size: 1.4em;
     color: var(--clr-gold);
 }
-
+.info {
+    /*width: 80%;*/
+}
 .descr {
-    color: var(--clr-primary-3);
+    color: var(--clr-grey-6);
+    font-size: 1.2em;
 }
 
 .photo {
@@ -128,7 +135,7 @@ img {
     .photo {
         width: 100%;
         margin-bottom: .5em;
-        height: auto;
+        height: 15em;
     }
 }
 
