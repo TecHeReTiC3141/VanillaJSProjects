@@ -67,6 +67,8 @@ body, html {
     font-size: 4em;
     text-transform: capitalize;
     letter-spacing: 1px;
+    width: 100%;
+    text-align: center;
 }
 
 .toggle-btn {
@@ -100,4 +102,10 @@ body, html {
 
 .toggle-btn:not(.play) .toggle {
     left: 50%;
+}
+
+@media screen and (max-width: 850px) {
+    .caption {
+        font-size: 3em;
+    }
 }
