@@ -1,0 +1,111 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body, html {
+    height: 100%;
+    font-family: var(--ff-secondary);
+    color: var(--clr-grey-1);
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.preloader {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-white);
+    transition: var(--transition);
+    opacity: 1;
+}
+
+.preloader.hidden {
+    opacity: 0;
+}
+
+.content {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.bg-video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .75;
+}
+
+.caption {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--clr-white);
+    opacity: 1;
+    z-index: 1;
+    font-size: 4em;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    width: 100%;
+    text-align: center;
+}
+
+.toggle-btn {
+    position: absolute;
+    bottom: 8%;
+    left: 8%;
+    display: flex;
+    background-color: var(--clr-white);
+    border-radius: .5em;
+    color: var(--clr-primary-5);
+    cursor: pointer;
+}
+
+.toggle-btn > p {
+    padding: .5em 1em;
+}
+
+.toggle-btn .toggle {
+    position: absolute;
+    top: 0;
+    background-color: var(--clr-primary-4);
+    height: 100%;
+    width: 50%;
+    border-radius: inherit;
+    transition: var(--transition);
+}
+
+.toggle-btn.play .toggle {
+    left: 0;
+}
+
+.toggle-btn:not(.play) .toggle {
+    left: 50%;
+}
+
+@media screen and (max-width: 850px) {
+    .caption {
+        font-size: 3em;
+    }
+}
