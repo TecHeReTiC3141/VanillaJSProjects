@@ -7,9 +7,106 @@ body, html {
     height: 100%;
     font-family: var(--ff-secondary);
     color: var(--clr-grey-1);
-    padding: 0;
-    margin: 0;
+    overflow-x: clip;
 }
 
+.content > *:nth-child(even) {
+    background-color: var(--clr-grey-10);
+}
 
+#hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--clr-white);
+    height: 100vh;
+    background: linear-gradient(rgba(63, 208, 212, 0.5), rgba(0, 0, 0, 0.7)),
+    url("./images/hero.png") center/cover no-repeat;
+    position: relative;
+}
 
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 1em;
+    width: min(85%, 65em);
+}
+
+.header .navbar {
+    list-style-type: none;
+    display: flex;
+}
+
+.navbar li {
+    margin: 1em;
+}
+
+.navbar li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+#hero .caption {
+    margin-top: 1em;
+    text-transform: uppercase;
+    font-size: 3.5em;
+    letter-spacing: 3px;
+    padding: .5rem;
+}
+
+#hero .descr {
+    width: 40em;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+#hero .explore {
+    background-color: transparent;
+    color: white;
+    border: 2px solid var(--clr-white);
+    margin-top: 1em;
+    padding: 1em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+#hero .explore:hover {
+    background-color: var(--clr-white);
+    color: var(--clr-primary-6);
+}
+
+.about, .tours, .services {
+    height: 90vh;
+}
+
+.caption {
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2em;
+}
+
+.caption span {
+    color: var(--clr-secondary);
+}
+
+footer {
+    width: available;
+    text-align: center;
+    background-color: var(--clr-grey-2);
+    color: white;
+    padding: 5em;
+}
+
+footer h3 {
+    font-weight: lighter;
+    letter-spacing: 2px;
+}
