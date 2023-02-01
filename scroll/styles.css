@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body, html {
@@ -8,6 +9,10 @@ body, html {
     font-family: var(--ff-secondary);
     color: var(--clr-grey-1);
     overflow-x: clip;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 .content > *:nth-child(even) {
@@ -32,10 +37,45 @@ body, html {
     align-items: center;
     position: absolute;
     top: 1em;
-    width: min(85%, 65em);
+    width: min(90%, 75em);
+    padding: .5em 0;
 }
 
-.header .navbar {
+.header.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: var(--light-shadow);
+    background-color: var(--clr-white);
+    color: var(--clr-primary-1);
+    padding: .5em max(5em, 5%);
+}
+
+.header.fixed a {
+    color: var(--clr-primary-1);
+}
+
+.header .upper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-toggle {
+    background-color: transparent;
+    border: none;
+    font-size: 1.2em;
+    transition: var(--transition);
+    display: none;
+}
+
+.nav-toggle:hover {
+    color: var(--clr-secondary);
+    transform: rotate(90deg);
+}
+
+.header .navbar .links {
     list-style-type: none;
     display: flex;
 }
@@ -103,10 +143,59 @@ footer {
     text-align: center;
     background-color: var(--clr-grey-2);
     color: white;
-    padding: 5em;
+    padding: 5em 0;
 }
 
 footer h3 {
     font-weight: lighter;
     letter-spacing: 2px;
+}
+
+@media screen and (min-width: 801px) {
+    .navbar {
+        height: auto !important;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .header {
+        background-color: var(--clr-white);
+        color: var(--clr-primary-1);
+        flex-direction: column;
+        width: 100%;
+        top: 0;
+    }
+
+    .upper {
+        width: 100%;
+        padding: 1.5em 2em;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .navbar {
+        height: 0;
+        position: absolute;
+        left: 0;
+        padding-left: 1em;
+        top: 100%;
+        width: 100%;
+        background-color: var(--clr-white);
+        overflow: hidden;
+        transition: var(--transition);
+    }
+
+    .navbar .links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar li {
+        margin: 1em 1em;
+    }
+    .navbar li a {
+        color: var(--clr-primary-1);
+    }
 }
