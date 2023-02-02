@@ -5,22 +5,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         anchors.forEach(item => {
             item.addEventListener('click', e => {
-               e.preventDefault();
+                e.preventDefault();
 
-               let hrefId = e.currentTarget.getAttribute('href').substring(1);
+                let hrefId = e.currentTarget.getAttribute('href').substring(1);
 
-               let target = document.getElementById(hrefId);
+                let target = document.getElementById(hrefId);
 
-               let header = document.querySelector('.header');
-               header.querySelector('.navbar').classList.remove('opened');
-               header.querySelector('.navbar').style.height = '0';
-               let targetOffset = target.getBoundingClientRect().top;
-
-               let offsetDiff = targetOffset - header.offsetHeight;
-               window.scrollBy({
-                   top: offsetDiff,
-                   behavior: "smooth",
-               })
+                let header = document.querySelector('.header');
+                header.querySelector('.navbar').classList.remove('opened');
+                header.querySelector('.navbar').style.height = '0';
+                let targetOffset = target.getBoundingClientRect().top;
+                let offsetDiff = targetOffset - header.offsetHeight;
+                window.scrollBy({
+                    top: offsetDiff,
+                    behavior: "smooth",
+                });
             });
         });
     }
@@ -64,16 +63,16 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', () => {
             console.log(window.pageYOffset, header.getBoundingClientRect().height,
                 hero.getBoundingClientRect().height);
-           if (window.pageYOffset > header.getBoundingClientRect().height) {
-               header.classList.add('fixed');
-           } else {
-               header.classList.remove('fixed');
-           }
-           if (window.pageYOffset > hero.getBoundingClientRect().height - header.getBoundingClientRect().height) {
-               toHeader.classList.remove('hidden');
-           } else {
-               toHeader.classList.add('hidden');
-           }
+            if (window.pageYOffset > header.getBoundingClientRect().height) {
+                header.classList.add('fixed');
+            } else {
+                header.classList.remove('fixed');
+            }
+            if (window.pageYOffset > hero.getBoundingClientRect().height - header.getBoundingClientRect().height) {
+                toHeader.classList.remove('hidden');
+            } else {
+                toHeader.classList.add('hidden');
+            }
         });
     }
 
