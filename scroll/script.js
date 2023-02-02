@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
                let target = document.getElementById(hrefId);
 
                let header = document.querySelector('.header');
-
+               header.querySelector('.navbar').classList.remove('opened');
+               header.querySelector('.navbar').style.height = '0';
                let targetOffset = target.getBoundingClientRect().top;
 
                let offsetDiff = targetOffset - header.offsetHeight;
@@ -47,13 +48,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function toggle_fixed_header() {
         let header = document.querySelector('.header');
+        let toHeader = document.querySelector('.to-header');
+        toHeader.addEventListener('click', (e) => {
+            if (toHeader.classList.contains('hidden')) return;
+            e.preventDefault();
+
+            window.scrollBy({
+                top: -window.pageYOffset,
+                behavior: 'smooth',
+            });
+        });
+
+        let hero = document.getElementById('hero');
 
         window.addEventListener('scroll', () => {
-            console.log(window.pageYOffset, header.getBoundingClientRect().height);
+            console.log(window.pageYOffset, header.getBoundingClientRect().height,
+                hero.getBoundingClientRect().height);
            if (window.pageYOffset > header.getBoundingClientRect().height) {
                header.classList.add('fixed');
            } else {
                header.classList.remove('fixed');
+           }
+           if (window.pageYOffset > hero.getBoundingClientRect().height - header.getBoundingClientRect().height) {
+               toHeader.classList.remove('hidden');
+           } else {
+               toHeader.classList.add('hidden');
            }
         });
     }
