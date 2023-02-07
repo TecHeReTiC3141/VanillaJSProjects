@@ -114,9 +114,15 @@ body, html {
     }
 
     .content img {
+        flex: none;
         width: 100%;
         height: 20em;
     }
+
+    .content .tabs {
+        flex: none;
+    }
+
 }
 
 @media screen and (max-width: 768px) {
