@@ -1,0 +1,141 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: var(--ff-secondary);
+    color: var(--clr-grey-1);
+    background-color: var(--clr-grey-10);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: font-size .3s linear;
+    overflow-x: hidden;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4em;
+}
+
+.header .caption {
+    font-size: 2.5em;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+}
+
+.header .descr {
+    color: var(--clr-grey-5);
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    width: min(90%, 75em);
+    gap: 1.5em;
+}
+
+.content img {
+    flex: 1;
+    border-radius: .5em;
+    height: 20em;
+    object-fit: cover;
+}
+
+.content .tabs {
+    flex: 1;
+    background-color: var(--clr-white);
+    border-radius: 1em;
+}
+
+.tabs .tab-names {
+    list-style-type: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.tab-names li {
+    text-align: center;
+    flex: 1;
+    padding: 1em;
+    letter-spacing: 3px;
+    transition: var(--transition);
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.tab-names li:first-child {
+    border-top-left-radius: 1em;
+}
+
+.tab-names li:last-child {
+    border-top-right-radius: 1em;
+}
+
+.tab-names li:not(.active) {
+    background-color: var(--clr-grey-9);
+}
+
+.tab-names li:not(.active):hover {
+    background-color: var(--clr-primary-9);
+    color: var(--clr-primary-5);
+}
+
+.tabs .section {
+    margin: 1.5em;
+}
+
+.section .title {
+    padding-bottom: 1em;
+    letter-spacing: 3px;
+    text-transform: capitalize;
+}
+
+.section .text {
+    color: var(--clr-grey-5);
+    font-size: 1.1em;
+    margin-bottom: 1em;
+}
+
+@media screen and (max-width: 992px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        object-fit: cover;
+    }
+
+    .content img {
+        flex: none;
+        width: 100%;
+        height: 20em;
+    }
+
+    .content .tabs {
+        flex: none;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    body {
+        font-size: .9em;
+    }
+}
+
+
+
+
+
+
+
+
