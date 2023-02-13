@@ -1,0 +1,24 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: var(--ff-secondary);
+    color: var(--clr-grey-1);
+    padding: 0;
+    margin: 0;
+    transition: var(--transition);
+    background-color: var(--clr-grey-10);
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 0.9em;
+    }
+}
+
+
+
