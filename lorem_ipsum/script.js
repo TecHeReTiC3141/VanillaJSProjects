@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
             loremText.appendChild(lorem);
         }
     }
-
     form.addEventListener('submit', e => {
         e.preventDefault();
         let val = parseInt(amount.value);
