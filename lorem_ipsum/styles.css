@@ -41,7 +41,7 @@ body, html {
     text-transform: capitalize;
 }
 
-.gen-form input {
+.gen-form input:not(.generate) {
     width: 4em;
     border: 2px solid transparent;
     padding: .25em;
@@ -55,10 +55,10 @@ body, html {
     border-radius: .5em;
     text-transform: uppercase;
     font-weight: lighter;
-    font-size: 1em;
+    font-size: .9em;
     margin: .5em;
     transition: var(--transition);
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 .gen-form .generate:hover {
