@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let product = document.getElementById('product');
     let actionButton = form.querySelector('.action');
     let toBuyList = document.querySelector('.to-buy');
+    let msgContainer = document.querySelector('.messages');
 
     let idCounter = 0;
 
@@ -36,6 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
             actionButton.dataset.curEdit = editBtn.dataset.iden;
         });
         deleteBtn.addEventListener('click', () => {
+            actionButton.value = 'submit';
+            product.value = '';
             deleteBtn.parentElement.parentElement.remove();
         });
         console.log(item);
@@ -46,10 +49,18 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         console.log(product.value, actionButton.value);
         if (!product.value) {
+            let errorMsg = createElement('p',
+                'please enter value', 'message', 'error');
+            errorMsg.dataset.timeStamp = Date.now().toString();
+            msgContainer.replaceChildren(errorMsg);
             return;
         }
         if (actionButton.value === 'submit') {
             generateNewItem(product.value);
+            let submitMsg = createElement('p',
+                'new item was added', 'message', 'success');
+            submitMsg.dataset.timeStamp = Date.now().toString();
+            msgContainer.replaceChildren(submitMsg);
         } else if (actionButton.value === 'edit') {
             console.log(actionButton.dataset.curEdit);
             let editedItem = document.querySelector(
@@ -57,6 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
             editedItem.querySelector('.grocery').innerHTML = product.value;
             delete actionButton.dataset.curEdit;
             actionButton.value = 'submit';
+            let editedMsg = createElement('p',
+                'value was changed', 'message', 'success');
+            editedMsg.dataset.timeStamp = Date.now().toString();
+            msgContainer.replaceChildren(editedMsg);
         }
         product.value = '';
     });
@@ -65,4 +80,14 @@ document.addEventListener('DOMContentLoaded', () => {
     clearBtn.addEventListener('click', () => {
         toBuyList.replaceChildren();
     });
+
+    setInterval(() => {
+        let curMsg = msgContainer.querySelector('.message');
+        if (curMsg === null) return;
+        let curTimeStamp = Date.now();
+        console.log(curMsg.dataset.timeStamp, curMsg);
+        if (curTimeStamp - curMsg.dataset.timeStamp >= 2000) {
+            curMsg.remove();
+        }
+    }, 1000);
 });

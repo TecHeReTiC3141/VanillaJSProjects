@@ -28,6 +28,27 @@ body, html {
     border-radius: .5em;
 }
 
+.messages {
+    width: 100%;
+    text-align: center;
+}
+
+.messages .message {
+    width: 100%;
+    text-transform: capitalize;
+    letter-spacing: 3px;
+    border-radius: .5em;
+}
+
+.message.error {
+    --clr-red-light: rgba(230, 107, 107, 0.3);
+    background-color: var(--clr-red-light);
+}
+
+.message.success {
+    background-color: var(--clr-green-light);
+}
+
 .title {
     margin-top: 1em;
     text-transform: capitalize;
