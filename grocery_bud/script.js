@@ -23,10 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function generateNewItem(val, iden=Date.now()) {
         let newName = createElement('p', val, 'grocery');
         let item = document.createElement('li');
-
         item.append(newName);
         item.insertAdjacentHTML('beforeend', btnContainer);
-        item.dataset.iden = iden;
+        item.dataset.iden = iden.toString();
         const editBtn = item.querySelector('.edit');
         editBtn.dataset.iden = item.dataset.iden;
         const deleteBtn = item.querySelector('.delete');
@@ -36,8 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             actionButton.dataset.curEdit = editBtn.dataset.iden;
         });
         deleteBtn.addEventListener('click', () => {
-            actionButton.value = 'submit';
-            product.value = '';
+            returnToDefault();
             deleteFromLocalStorage(iden);
             deleteBtn.parentElement.parentElement.remove();
             console.log(toBuyList.children);
@@ -97,10 +95,11 @@ document.addEventListener('DOMContentLoaded', () => {
         returnToDefault();
     });
 
+    let compareNumbers = (a, b) => a - b;
+
     function restoreItems() {
-        for (let key of Object.keys(localStorage)) {
-            generateNewItem(localStorage.getItem(key), key);
-        }
+        let idens = Object.keys(localStorage).map(item => +item).sort(compareNumbers);
+        idens.forEach(key => generateNewItem(localStorage.getItem(key.toString()), key));
     }
 
     function addToLocalStorage(id, value) {
@@ -112,6 +111,5 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(`${id} with value ${localStorage.getItem(id)} was deleted from LS`)
         localStorage.removeItem(id);
     }
-
     restoreItems();
 });
