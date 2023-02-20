@@ -12,6 +12,43 @@ body, html {
     margin: 0;
     transition: var(--transition);
     background-color: var(--clr-grey-10);
+    overflow: hidden;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4em;
+}
+
+.frame {
+    height: 32em;
+    background-color: var(--clr-primary-7);
+    border: 5px solid var(--clr-primary-4);
+    border-radius: .5em;
+    width: min(80%, 60em);
+    position: relative;
+}
+
+.cur-number {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--clr-white);
+    font-size: 4em;
+    font-weight: bolder;
+    font-family: var(--ff-primary);
+}
+
+.buttons button {
+    background: none;
+    border: none;
+    font-size: 1.75em;
+    padding: .5rem;
+    color: var(--clr-grey-5);
+    cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
