@@ -1,0 +1,97 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: var(--ff-secondary);
+    color: var(--clr-grey-1);
+    padding: 0;
+    margin: 0;
+    transition: var(--transition);
+    background-color: var(--clr-grey-10);
+    overflow-y: hidden;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4em;
+}
+
+.frame {
+    height: 32em;
+    background-color: var(--clr-primary-7);
+    border: 5px solid var(--clr-primary-4);
+    border-radius: .5em;
+    width: min(80%, 80em);
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    left: 0;
+    top: 0;
+    transition: var(--transition);
+}
+
+.cur-number {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--clr-white);
+    font-size: 4em;
+    font-weight: bolder;
+    font-family: var(--ff-primary);
+    z-index: 10;
+}
+
+.buttons {
+    display: flex;
+}
+
+.buttons button {
+    background: none;
+    border: none;
+    font-size: 1.75em;
+    padding: .5rem;
+    color: var(--clr-grey-5);
+    cursor: pointer;
+    transition: var(--transition);
+    border-radius: .5em;
+    margin: .25em;
+}
+
+.buttons button:hover {
+    box-shadow: 0 .2em var(--clr-primary-1);
+    background-color: var(--clr-primary-4);
+    color: var(--clr-primary-10);
+
+}
+
+.buttons button:active {
+    transform: translateY(.25em);
+    box-shadow: 0 0 var(--clr-primary-1);
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .frame {
+        height: 38em;
+    }
+}
+
+

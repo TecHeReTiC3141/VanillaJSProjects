@@ -27,7 +27,7 @@ html {
     color: var(--clr-white);
     height: 100vh;
     background: linear-gradient(rgba(63, 208, 212, 0.5), rgba(0, 0, 0, 0.7)),
-    url("./images/hero.png") center/cover no-repeat;
+    url("../slider/image/img-4.png") center/cover no-repeat;
     position: relative;
 }
 
