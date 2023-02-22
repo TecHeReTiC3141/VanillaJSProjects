@@ -12,29 +12,34 @@ document.addEventListener('DOMContentLoaded', () => {
     let cur_ind = 1;
     prevBtn.addEventListener('click', () => {
         --cur_ind;
+        if (cur_ind === 0) {
+            for (let i = 0; i < slides.length; ++i) {
+                slides[i].style.left = `-${slides.length - i - 1}00%`;
+            }
+            cur_ind = slides.length;
+        } else {
+            for (let i = 0; i < slides.length; ++i) {
+                let slide = slides[i];
+                let cur_le = +slide.style.left.slice(0, -1) + 100;
+                slide.style.left = `${cur_le}%`;
+            }
+        }
         curNumber.innerText = cur_ind.toString();
-        for (let i = 0; i < slides.length; ++i) {
-            let slide = slides[i];
-            let cur_le = +slide.style.left.slice(0, -1) + 100;
-            slide.style.left = `${cur_le}%`;
-        }
-        if (cur_ind === 1) {
-            prevBtn.style.display = 'none';
-        }
-        nextBtn.style.display = 'block';
     });
     nextBtn.addEventListener('click', () => {
         ++cur_ind;
+        if (cur_ind === slides.length + 1) {
+            for (let i = 0; i < slides.length; ++i) {
+                slides[i].style.left = `${i}00%`;
+            }
+            cur_ind = 1;
+        } else {
+            for (let i = 0; i < slides.length; ++i) {
+                let slide = slides[i];
+                let cur_le = +slide.style.left.slice(0, -1) - 100;
+                slide.style.left = `${cur_le}%`;
+            }
+        }
         curNumber.innerText = cur_ind.toString();
-        for (let i = 0; i < slides.length; ++i) {
-            let slide = slides[i];
-            let cur_le = +slide.style.left.slice(0, -1) - 100;
-            slide.style.left = `${cur_le}%`;
-        }
-
-        if (cur_ind === slides.length) {
-            nextBtn.style.display = 'none';
-        }
-        prevBtn.style.display = 'block';
     });
 });

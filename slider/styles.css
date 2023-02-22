@@ -27,7 +27,7 @@ body, html {
     background-color: var(--clr-primary-7);
     border: 5px solid var(--clr-primary-4);
     border-radius: .5em;
-    width: min(80%, 60em);
+    width: min(80%, 80em);
     position: relative;
     overflow: hidden;
 }
@@ -65,10 +65,21 @@ body, html {
     padding: .5rem;
     color: var(--clr-grey-5);
     cursor: pointer;
+    transition: var(--transition);
+    border-radius: .5em;
+    margin: .25em;
 }
 
-.prev {
-    display: none;
+.buttons button:hover {
+    box-shadow: 0 .2em var(--clr-primary-1);
+    background-color: var(--clr-primary-4);
+    color: var(--clr-primary-10);
+
+}
+
+.buttons button:active {
+    transform: translateY(.25em);
+    box-shadow: 0 0 var(--clr-primary-1);
 }
 
 @media screen and (max-width: 768px) {
@@ -77,5 +88,10 @@ body, html {
     }
 }
 
+@media screen and (min-width: 992px) {
+    .frame {
+        height: 38em;
+    }
+}
 
 
