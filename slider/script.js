@@ -8,29 +8,31 @@ document.addEventListener('DOMContentLoaded', () => {
         let slide = slides[i];
         slide.style.left = `${i}00%`;
     }
+
+    let cur_ind = 1;
     prevBtn.addEventListener('click', () => {
-        let cur_num = +curNumber.innerText - 1;
-        curNumber.innerText = (cur_num).toString();
+        --cur_ind;
+        curNumber.innerText = cur_ind.toString();
         for (let i = 0; i < slides.length; ++i) {
             let slide = slides[i];
             let cur_le = +slide.style.left.slice(0, -1) + 100;
             slide.style.left = `${cur_le}%`;
         }
-        if (cur_num === 1) {
+        if (cur_ind === 1) {
             prevBtn.style.display = 'none';
         }
         nextBtn.style.display = 'block';
     });
     nextBtn.addEventListener('click', () => {
-        let cur_num = +curNumber.innerText;
-        curNumber.innerText = (cur_num + 1).toString();
+        ++cur_ind;
+        curNumber.innerText = cur_ind.toString();
         for (let i = 0; i < slides.length; ++i) {
             let slide = slides[i];
             let cur_le = +slide.style.left.slice(0, -1) - 100;
             slide.style.left = `${cur_le}%`;
         }
 
-        if (cur_num === slides.length - 1) {
+        if (cur_ind === slides.length) {
             nextBtn.style.display = 'none';
         }
         prevBtn.style.display = 'block';
