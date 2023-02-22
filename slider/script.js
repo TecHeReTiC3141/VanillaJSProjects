@@ -13,32 +13,30 @@ document.addEventListener('DOMContentLoaded', () => {
     prevBtn.addEventListener('click', () => {
         --cur_ind;
         if (cur_ind === 0) {
-            for (let i = 0; i < slides.length; ++i) {
-                slides[i].style.left = `-${slides.length - i - 1}00%`;
-            }
+            slides.forEach((slide, index) => {
+                slide.style.left = `-${slides.length - index - 1}00%`;
+            });
             cur_ind = slides.length;
         } else {
-            for (let i = 0; i < slides.length; ++i) {
-                let slide = slides[i];
+            slides.forEach(slide => {
                 let cur_le = +slide.style.left.slice(0, -1) + 100;
                 slide.style.left = `${cur_le}%`;
-            }
+            });
         }
         curNumber.innerText = cur_ind.toString();
     });
     nextBtn.addEventListener('click', () => {
         ++cur_ind;
         if (cur_ind === slides.length + 1) {
-            for (let i = 0; i < slides.length; ++i) {
-                slides[i].style.left = `${i}00%`;
-            }
+            slides.forEach((slide, index) => {
+                slide.style.left = `${index}00%`
+            });
             cur_ind = 1;
         } else {
-            for (let i = 0; i < slides.length; ++i) {
-                let slide = slides[i];
+            slides.forEach(slide => {
                 let cur_le = +slide.style.left.slice(0, -1) - 100;
                 slide.style.left = `${cur_le}%`;
-            }
+            });
         }
         curNumber.innerText = cur_ind.toString();
     });
