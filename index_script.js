@@ -1,4 +1,4 @@
-let images = [
+let projects = [
     'color flipper',
     'simple counter',
     'reviews', 'navbar',
@@ -10,4 +10,28 @@ let images = [
     'slider'
 ];
 
+function createElementWithClassAndValue(tag, value, ...classes) {
+    let el = document.createElement(tag);
+    el.innerHTML = value;
+    classes.forEach(cl => {
+        el.classList.add(cl);
+    });
+    return el;
+}
 
+document.addEventListener('DOMContentLoaded', () => {
+    let projects_sect = document.querySelector('.projects');
+    function createProject(proj) {
+        let project = createElementWithClassAndValue('a', '', 'project');
+        let name = createElementWithClassAndValue('h3', proj, 'name');
+        let image = createElementWithClassAndValue('img', '', 'preview');
+        image.src = `./proj_images/${proj}.jpg`;
+        image.alt = proj;
+        project.append(image, name);
+        projects_sect.appendChild(project);
+    }
+    projects.forEach(proj => {
+        createProject(proj);
+    });
+
+});
