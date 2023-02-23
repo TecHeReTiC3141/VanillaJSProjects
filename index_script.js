@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let projects_sect = document.querySelector('.projects');
     function createProject(proj) {
         let project = createElementWithClassAndValue('a', '', 'project');
+        project.href = `./${proj}/template.html`;
+        project.target = '_blank';
         let name = createElementWithClassAndValue('h3', proj, 'name');
         let image = createElementWithClassAndValue('img', '', 'preview');
         image.src = `./proj_images/${proj}.jpg`;

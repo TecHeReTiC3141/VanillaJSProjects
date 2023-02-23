@@ -46,6 +46,13 @@ header .hero {
     font-size: 1.1em;
 }
 
+.header-container .descr a  {
+    font-weight: bold;
+    text-decoration: underline var(--primary-design) solid .25em;
+    font-style: italic;
+    color: var(--clr-black);
+}
+
 .content {
     display: flex;
     flex-direction: column;
@@ -91,6 +98,7 @@ header .hero {
     transition: var(--transition);
     box-shadow: var(--shadow-4);
     cursor: pointer;
+    text-decoration: none;
 }
 
 .project:hover {
@@ -114,6 +122,8 @@ header .hero {
     letter-spacing: 3px;
     border-bottom-right-radius: .5em;
     border-bottom-left-radius: .5em;
+    text-decoration: none;
+    color: var(--clr-grey-1);
 }
 
 @media screen and (max-width: 1172px) {
