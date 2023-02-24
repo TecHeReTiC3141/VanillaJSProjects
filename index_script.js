@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let projects_sect = document.querySelector('.projects');
     function createProject(proj) {
         let project = createElementWithClassAndValue('a', '', 'project');
-        project.href = `./${proj}/template.html`;
+        project.href = (proj === 'modal' ? `./modal/first/template.html` : `./${proj}/template.html`);
         project.target = '_blank';
         let name = createElementWithClassAndValue('h3', proj, 'name');
         let image = createElementWithClassAndValue('img', '', 'preview');
