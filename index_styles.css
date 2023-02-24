@@ -126,6 +126,72 @@ header .hero {
     color: var(--clr-grey-1);
 }
 
+footer {
+    height: 10vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-links {
+    display: flex;
+    margin-top: 1em;
+    list-style-type: none;
+}
+
+.social-links li {
+    text-align: center;
+    position: relative;
+    margin-left: 3em;
+    cursor: pointer;
+}
+
+.social-links li:first-child {
+    margin-left: 0;
+}
+
+.social-links li i {
+    color: var(--clr-primary-4);
+    transition: var(--transition);
+}
+
+.social-links li i:hover {
+    color: var(--clr-primary-6);
+}
+
+.social-links li .tooltip {
+    background-color: var(--clr-black);
+    color: var(--clr-white);
+    border-radius: .5em;
+    padding: .5em;
+    position: absolute;
+    left: 50%;
+    top: 105%;
+    transform: translateX(-50%);
+    transition: var(--transition);
+    opacity: 0;
+}
+
+.social-links li .tooltip::before {
+    content: " ";
+    border-width: 5px;
+    border-style: solid;
+    border-color:  transparent transparent black transparent;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.social-links li:hover .tooltip {
+    opacity: 1;
+}
+
+
+
+
 @media screen and (max-width: 1172px) {
     .project {
         width: 45%;
