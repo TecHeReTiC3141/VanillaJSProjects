@@ -20,8 +20,8 @@
 }
 
 @font-face {
-    font-family: "Roboto";
-    src: url("fonts/Roboto/Roboto-Light.ttf") format("truetype");
+    font-family: "Open Sans";
+    src: url("fonts/Open Sans/static/OpenSans/OpenSans-Medium.ttf") format("truetype");
 }
 
 :root {
