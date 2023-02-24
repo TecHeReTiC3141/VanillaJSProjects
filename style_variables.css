@@ -1,3 +1,29 @@
+@font-face {
+    font-family: "Roboto";
+    src: url("fonts/Roboto/Roboto-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("fonts/Montserrat/static/Montserrat-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("fonts/Montserrat/static/Montserrat-Bold.ttf") format("truetype");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url("fonts/Ubuntu/Ubuntu-Light.ttf");
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("fonts/Roboto/Roboto-Light.ttf") format("truetype");
+}
+
 :root {
     /* dark shades of primary color*/
     --clr-primary-1: hsl(205, 86%, 17%);
@@ -46,8 +72,8 @@
     --clr-black: #222;
     --ff-primary: "Roboto", sans-serif;
     --ff-secondary: "Open Sans", sans-serif;
-    --headingFont: "Inconsolata",monospace;
-    --bodyFont: "Montserrat",sans-serif;
+    --headingFont: "Ubuntu", monospace;
+    --bodyFont: "Montserrat", sans-serif;
     --transition: all 0.3s linear;
     --spacing: 0.25rem;
     --radius: 0.5rem;
