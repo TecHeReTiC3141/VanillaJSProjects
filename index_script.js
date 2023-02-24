@@ -5,9 +5,9 @@ let projects = [
     'sidebar', 'modal',
     'questions', 'menu',
     'video', 'scroll',
-    'tabs', 'countdown timer',
+    'tabs', 'countdown',
     'lorem ipsum', 'grocery bud',
-    'slider'
+    'slider',
 ];
 
 function createElementWithClassAndValue(tag, value, ...classes) {
