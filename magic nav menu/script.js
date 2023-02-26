@@ -10,8 +10,19 @@ document.addEventListener('DOMContentLoaded', () => {
             e.currentTarget.classList.add('active');
             let targ_rect = e.currentTarget.querySelector('i').getBoundingClientRect();
             let targ_center_x = (targ_rect.left + targ_rect.right) / 2;
-            console.log(targ_center_x,  activeBg.clientWidth,  targ_rect.width);
-            activeBg.style.left = `${(targ_center_x - activeBg.clientWidth / 2 - nav.getBoundingClientRect().left)}px`;
+            activeBg.style.left = `${(targ_center_x - (activeBg.clientWidth + 16) / 2 - nav.getBoundingClientRect().left)}px`;
         });
-    })
+    });
+
+    window.addEventListener('resize', () => {
+        console.log('resized');
+        for (let nav_el of nav_elements) {
+            if (nav_el.classList.contains('active')) {
+                let targ_rect = nav_el.querySelector('i').getBoundingClientRect();
+                let targ_center_x = (targ_rect.left + targ_rect.right) / 2;
+                activeBg.style.left = `${(targ_center_x - (activeBg.clientWidth + 16) / 2 - nav.getBoundingClientRect().left)}px`;
+                break;
+            }
+        }
+    });
 });

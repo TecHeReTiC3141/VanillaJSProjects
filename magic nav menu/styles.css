@@ -33,21 +33,46 @@ body, html {
     width: min(70em, 80%);
     background-color: var(--clr-white);
     justify-content: space-around;
-    padding: 2em 2em;
+    padding: 1.5em 1.5em;
     border-radius: 1em;
     position: relative;
 }
 
 .sect-bg {
     position: absolute;
-    height: 5em;
-    width: 5em;
+    width: 6em;
+    height: 6em;
     border-radius: 50%;
-    background-color: var(--active-clr);
     z-index: 1;
-    left: 2.5em;
-    top: -2.5em;
+    left: 2em;
+    top: -50%;
     transition: var(--transition);
+    background-color: var(--active-clr);
+    border: .5em solid var(--bg-clr);
+}
+
+.sect-bg::before {
+    content: ' ';
+    position: absolute;
+    left: -25px;
+    top: 50%;
+    width: 1.25em;
+    height: 1.25em;
+    background-color: var(--clr-white);
+    border-top-right-radius: 100%;
+    box-shadow: 0 -10px 0 0 var(--bg-clr)
+}
+
+.sect-bg::after {
+    content: ' ';
+    position: absolute;
+    right: -25px;
+    top: 50%;
+    width: 1.25em;
+    height: 1.25em;
+    background-color: var(--clr-white);
+    border-top-left-radius: 100%;
+    box-shadow: 0 -10px 0 0 var(--bg-clr);
 
 }
 
@@ -75,10 +100,11 @@ body, html {
     position: relative;
     top: 1em;
     transition: var(--transition);
+    letter-spacing: 1px;
 }
 
 .nav li.active a i {
-    top: -2em;
+    top: -1.5em;
     z-index: 10;
 }
 
@@ -86,14 +112,3 @@ body, html {
     top: 0;
     opacity: 1;
 }
-
-
-
-@media screen and (max-width: 768px) {
-    body {
-        font-size: 0.9em;
-    }
-}
-
-
-
