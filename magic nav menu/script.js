@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let nav_elements = document.querySelectorAll('.nav li');
     let activeBg = document.querySelector('.sect-bg');
     let nav = document.querySelector('.nav');
+    let content = document.querySelector('.content');
     nav_elements.forEach(el => {
         el.addEventListener('click', e => {
             nav_elements.forEach(el => {
@@ -24,5 +25,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
             }
         }
+    });
+
+    let themeToggler = document.querySelector('.theme-toggler');
+    let [lightBtn, darkBtn] = themeToggler.querySelectorAll('i');
+    themeToggler.addEventListener('click', () => {
+        content.classList.toggle('light');
+        content.classList.toggle('dark');
+
+        lightBtn.classList.toggle('fa-solid');
+        lightBtn.classList.toggle('fa-regular');
+        darkBtn.classList.toggle('fa-solid');
+        darkBtn.classList.toggle('fa-regular');
     });
 });

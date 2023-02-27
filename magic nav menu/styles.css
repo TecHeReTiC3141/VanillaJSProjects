@@ -6,6 +6,7 @@
 
 :root {
     --bg-clr: #222327;
+    --lighter-bg-clr: #292b2f;
     --active-clr: #08FA01;
 }
 
@@ -27,15 +28,83 @@ body, html {
     align-items: center;
 }
 
+.theme-toggler {
+    position: fixed;
+    right: 5vw;
+    top: 3vh;
+    font-size: 1.5em;
+    padding: .5rem;
+    border-radius: 1.5em;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: -2px -2px 10px var(--clr-grey-2), 2px 2px 5px var(--clr-grey-1);
+    border: none;
+}
+
+.theme-toggler .indicator {
+    position: absolute;
+    width: 40%;
+    height: 65%;
+    top: .5rem;
+    left: .5rem;
+    transition: var(--transition);
+    border-radius: 50%;
+
+    z-index: 1;
+}
+
+.content.light .theme-toggler .indicator {
+    background-color: var(--clr-black);
+}
+
+.theme-toggler i {
+     border-radius: 50%;
+     padding: .25rem;
+     transition: var(--transition);
+     z-index: 10;
+     position: relative;
+}
+
+.content.light .theme-toggler {
+    background-color: var(--clr-grey-8);
+}
+
+.content.light .theme-toggler i.light {
+    color: var(--clr-white);
+}
+
+
+.content.dark .theme-toggler .indicator {
+    background-color: var(--clr-white);
+    transform: translateX(1.45em);
+}
+
+.content.dark .theme-toggler {
+    background-color: var(--bg-clr);
+}
+
+.content.dark .theme-toggler i.dark {
+    color: var(--clr-black);
+}
+
+.content.dark .theme-toggler i.light {
+    color: var(--clr-white);
+}
+
+
+
 .nav {
     list-style-type: none;
     display: flex;
     width: min(70em, 80%);
-    background-color: var(--clr-white);
     justify-content: space-around;
     padding: 1.5em 1.5em;
     border-radius: 1em;
     position: relative;
+}
+
+.content.dark .nav {
+    background-color: var(--clr-white);
 }
 
 .sect-bg {
@@ -47,6 +116,9 @@ body, html {
     left: 2em;
     top: -50%;
     transition: var(--transition);
+}
+
+.content.dark .sect-bg {
     background-color: var(--active-clr);
     border: .5em solid var(--bg-clr);
 }
