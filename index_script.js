@@ -7,7 +7,7 @@ let projects = [
     'video', 'scroll',
     'tabs', 'countdown',
     'lorem ipsum', 'grocery bud',
-    'slider',
+    'slider', 'magic navbar',
 ];
 
 function createElementWithClassAndValue(tag, value, ...classes) {

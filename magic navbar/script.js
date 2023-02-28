@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
+    set_indicator();
 
     window.addEventListener('resize', set_indicator);
 
