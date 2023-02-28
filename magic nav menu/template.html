@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Title</title>
+    <title>Navigation Bar</title>
     <link href="styles.css" rel="stylesheet" type="text/css">
     <link href="../style_variables.css" rel="stylesheet" type="text/css">
     <script src="script.js"></script>
@@ -9,6 +9,46 @@
 
 </head>
 <body>
+    <div class="content light">
+        <button class="theme-toggler">
+            <span class="indicator"></span>
+            <i class="light fa-solid fa-sun"></i> <!-- regular for dark theme -->
+            <i class="dark fa-regular fa-moon"></i>
+        </button>
+
+        <ul class="nav">
+            <span class="sect-bg"></span>
+            <li class="active">
+                <a href="#" >
+                    <i class="fa-solid fa-house"></i>
+                    <p class="name">Home</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-regular fa-user"></i>
+                    <p class="name">Profile</p>
+                </a>
+            </li><li>
+            <a href="#">
+                <i class="fa-regular fa-message"></i>
+                <p class="name">Message</p>
+            </a>
+        </li>
+            <li>
+                <a href="#">
+                    <i class="fa-regular fa-image"></i>
+                    <p class="name">Photos</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-gear"></i>
+                    <p class="name">Settings</p>
+                </a>
+            </li>
+        </ul>
+    </div>
 
 </body>
 </html>
